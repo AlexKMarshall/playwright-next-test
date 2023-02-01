@@ -8,18 +8,6 @@ const test = base.extend<{ worker: MockServiceWorker }>({
 });
 
 test("should read default handler", async ({ page }) => {
-  // await page.route("https://icanhazdadjoke.com/", (route) => {
-  //   route.fulfill({
-  //     status: 200,
-  //     contentType: "application/json",
-  //     body: JSON.stringify({
-  //       id: "7h3oGtrOfxc",
-  //       joke: "Whiteboards ... are remarkable.",
-  //       status: 200,
-  //     }),
-  //   });
-  // });
-
   await page.goto("http://localhost:3000");
 
   await expect(page.getByText(/get started/i)).toBeVisible();
